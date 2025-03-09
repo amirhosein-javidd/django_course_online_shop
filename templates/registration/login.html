@@ -1,7 +1,14 @@
-<h1>Log in</h1>
+{% extends '_base.html' %}
 
-<form action="" method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Log in">
-</form>
+{% load crispy_forms_tags %}
+
+{% block page_title %}Log in{% endblock %}
+
+{% block content %}
+    <form action="" method="post">
+        {% csrf_token %}
+        <h1>Log in</h1>
+        {{ form|crispy }}
+        <input type="submit" value="Log in">
+    </form>
+{% endblock %}
