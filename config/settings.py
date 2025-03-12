@@ -50,6 +50,7 @@ INSTALLED_APPS = [
 
     'accounts',
     'pages',
+    'products',
 ]
 
 SITE_ID = 1
@@ -159,7 +160,7 @@ LOGOUT_REDIRECT_URL = 'home'
 ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
-ACCOUNT_LOGIN_METHODS = {'email'}
+# ACCOUNT_LOGIN_METHODS = {'email'}
 
 # crispy forms
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'

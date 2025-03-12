@@ -3,9 +3,9 @@
 {% block page_title %}Log out{% endblock %}
 
 {% block content %}
-    <h1>Log out</h1>
     <form method="post">
         {% csrf_token %}
+        <h1>Log out</h1>
         <button type="submit">Log out</button>
     </form>
 {% endblock %}
