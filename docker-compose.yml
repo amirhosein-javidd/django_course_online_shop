@@ -5,9 +5,20 @@ services:
     volumes:
       - .:/code
     ports:
-      - 8000:8000
+      - "8000:8000"
+    environment:
+      - "DJANGO_SECRET_KEY=django-insecure-b764$$#(&o4o((cvy!z^nsseq5@erq#e^0%5r5a(%c24*f^*sde"
+      - "DJANGO_DEBUG=True"
+    depends_on:
+      db:
+        condition: service_healthy
 
   db:
-    image: postgres:14
+    image: postgres:15
     environment:
       - "POSTGRES_HOST_AUTH_METHOD=trust"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
