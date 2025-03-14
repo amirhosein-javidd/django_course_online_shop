@@ -1,8 +1,16 @@
 from django.contrib import admin
 
-from .models import Product
+from .models import Product, Comment
 
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     list_display = ['title', 'price', 'status']
+
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ['product', 'author', 'text', 'stars', 'active']
+
+    def get_queryset(self, request):
+        return Comment.all_comments.all()
