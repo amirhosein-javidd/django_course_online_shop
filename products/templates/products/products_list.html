@@ -48,8 +48,10 @@
                                                     <div class="product-inner">
                                                         <figure class="product-image">
                                                             <a href="{{ product.get_absolute_url }}">
-                                                                <img src="https://vector98.ir/wp-content/uploads/2020/06/shop-building-vector-icon-illustration.jpg"
-                                                                     alt="Products">
+                                                                {% if product.cover %}
+                                                                    <img class="m-auto" style="max-height: 400px;"
+                                                                         src="{{ product.cover.url }}" alt="">
+                                                                {% endif %}
                                                             </a>
                                                             <div class="ShoppingYar-product-action">
                                                                 <div class="product-action d-flex">
@@ -138,7 +140,7 @@
         </div>
         <!-- Search form Popup End -->
 
-{#        {% include 'cart/cart_sidebar.html' %}#}
+        {#        {% include 'cart/cart_sidebar.html' %}#}
 
         <!-- Global Overlay Start -->
         <div class="ShoppingYar-global-overlay"></div>

@@ -12,6 +12,7 @@ class Product(models.Model):
     status = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
+    cover = models.ImageField(verbose_name=_('cover image'), upload_to='products/covers')
 
     def __str__(self):
         return self.title
