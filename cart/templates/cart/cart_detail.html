@@ -3,6 +3,8 @@
 {% load static %}
 {% load i18n %}
 {% load crispy_forms_tags %}
+{% load persian_numbers %}
+{% load humanize %}
 
 {% block page_title %}Cart{% endblock %}
 
@@ -48,7 +50,7 @@
                                                     </td>
                                                     <td class="product-price">
                                                             <span class="product-price-wrapper">
-                                                                <span class="money">{{ product.product_obj.price }}</span>
+                                                                <span class="money">{{ product.product_obj.price|intcomma:False|persian_numbers }}</span>
                                                             </span>
                                                     </td>
                                                     <td class="product-quantity">
@@ -68,7 +70,7 @@
                                                     </td>
                                                     <td class="product-total-price">
                                                             <span class="product-price-wrapper">
-                                                                <span class="money">{{ product.total_price }}</span>
+                                                                <span class="money">{{ product.total_price|intcomma:False|persian_numbers }}</span>
                                                             </span>
                                                     </td>
                                                 </tr>
@@ -107,7 +109,7 @@
                                         </div>
                                         <div class="cart-calculator__item--value">
                                                 <span class="product-price-wrapper">
-                                                    <span class="money">{{ cart.total_price }} تومان</span>
+                                                    <span class="money">{{ cart.total_price|intcomma:False|persian_numbers }} {% trans 'Toman' %}</span>
                                                 </span>
                                         </div>
                                     </div>

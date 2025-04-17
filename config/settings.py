@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'django.contrib.humanize',
+
     'crispy_forms',
     'crispy_bootstrap5',
     'allauth',
@@ -53,6 +55,7 @@ INSTALLED_APPS = [
     'pages',
     'products',
     'cart',
+    'trans',
 ]
 
 SITE_ID = 1
